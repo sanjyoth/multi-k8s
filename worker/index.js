@@ -9,8 +9,17 @@ const redisClient = redis.createClient({
 const sub = redisClient.duplicate();
 
 function fib(index) {
-  if (index < 2) return 1;
-  return fib(index - 1) + fib(index - 2);
+  if (index == 0) return 0;
+  if (index == 1) return 1;
+  let n1=0, n2=1;
+  let sum = 0;
+
+  for (let i=2; i<=index; i++) {
+    sum = n1 + n2;
+    n1 = n2;
+    n2 = sum;
+  }
+  return sum;
 }
 
 sub.on('message', (channel, message) => {
