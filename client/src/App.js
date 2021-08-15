@@ -11,9 +11,9 @@ function App() {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-          <Link to="/">Home Page</Link>
-          <Link to="/otherpage">Other Page</Link>
+          <h1 className="App-title">Welcome to Fibonacci Calculator</h1>
+          <Link className="App-link" to="/">Home Page</Link>
+          <Link className="App-link" to="/otherpage">Other Page</Link>
           <div>
             <Route exact path="/" component={Fib} />
             <Route path="/otherpage" component={OtherPage} />
